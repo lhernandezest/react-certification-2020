@@ -20,6 +20,7 @@ function AuthProvider({ children }) {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
     const isAuthenticated = Boolean(lastAuthState);
 
+    // setAuthenticated(isAuthenticated);
     setAuthenticated(isAuthenticated);
   }, []);
 
