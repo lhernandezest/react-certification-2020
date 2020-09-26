@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
 import wizeLogo from '../../../../assets/wizeline-squarelogo.png';
+import avatarIcon from '../../../../assets/avatar-icon.png';
 import './Profile.sass';
 import ProfileMenu from './ProfileMenu.component';
+import { useAuth } from '../../../../providers/Auth';
 
 const Profile = () => {
+  const { authenticated } = useAuth();
   const [shouldShowMenu, showMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -20,7 +23,7 @@ const Profile = () => {
       <img
         className="TopMenuProfile-icon"
         onClick={toggleMenu}
-        src={wizeLogo}
+        src={authenticated ? wizeLogo : avatarIcon}
         alt="Profile Menu"
         aria-hidden="true"
       />
