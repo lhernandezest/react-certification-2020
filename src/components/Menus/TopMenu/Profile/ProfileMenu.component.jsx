@@ -1,8 +1,17 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import './ProfileMenu.sass';
+import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
+import { colors } from '../../../../utils/constants';
 
 import { useAuth } from '../../../../providers/Auth';
+
+import ProfileMenuItem from './ProfileMenuItem.component';
+
+const Container = styled.ul`
+  background: ${colors.BG_SITE};
+  color: ${colors.FONT_SITE};
+  box-shadow: 2px 0px 10px 0px ${colors.SHADOW_PROFILE_MENU};
+`;
 
 const ProfileMenu = () => {
   const history = useHistory();
@@ -19,18 +28,15 @@ const ProfileMenu = () => {
     history.push('/');
   };
 
-  if (authenticated)
-    return (
-      <Link to="/" onClick={deAuthenticate}>
-        logout
-      </Link>
-    );
+  const getOptions = () => {
+    if (authenticated) {
+      return <ProfileMenuItem text="Logout" handleClick={deAuthenticate} />;
+    }
 
-  return (
-    <Link to="/" onClick={authenticate}>
-      login
-    </Link>
-  );
+    return <ProfileMenuItem text="Login" handleClick={authenticate} />;
+  };
+
+  return <Container className="TopMenuProfile-menu">{getOptions()}</Container>;
 };
 
 export default ProfileMenu;

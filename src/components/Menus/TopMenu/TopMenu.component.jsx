@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { colors } from '../../../utils/constants';
 import './TopMenu.sass';
 
 import DarKModeContext from '../../../state/DarkModeContext';
@@ -8,16 +9,17 @@ import Search from './Search/Search.component';
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle.component';
 import Profile from './Profile/Profile.component';
 
+const Container = styled.header`
+  background: ${colors.BG_TOP_MENU};
+`;
+
+const Space = styled.div`
+  width: auto;
+  flex-grow: 2;
+`;
+
 const TopMenu = () => {
   const { state, dispatch } = useContext(DarKModeContext);
-  const Container = styled.header`
-    background: ${state.darkMode ? '#556cd6' : '#1C5476'};
-  `;
-
-  const Space = styled.div`
-    width: auto;
-    flex-grow: 2;
-  `;
 
   const handleDarkModeToggle = () =>
     dispatch({

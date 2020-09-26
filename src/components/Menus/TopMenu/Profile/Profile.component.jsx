@@ -12,9 +12,9 @@ const Profile = () => {
   };
 
   return (
-    <div className="ProfileOption">
+    <div className="TopMenuProfile">
       <img
-        className="ProfileOption-icon"
+        className="TopMenuProfile-icon"
         onClick={toggleMenu}
         src={wizeLogo}
         alt="Profile Menu"
