@@ -18,7 +18,7 @@ const Space = styled.div`
   flex-grow: 2;
 `;
 
-const TopMenu = () => {
+const TopMenu = (props) => {
   const { state, dispatch } = useContext(DarKModeContext);
 
   const handleDarkModeToggle = () =>
@@ -29,7 +29,7 @@ const TopMenu = () => {
   return (
     <Container className="TopMenu">
       <div className="TopMenu-root">
-        <LeftMenuToggle />
+        <LeftMenuToggle handleToggle={props.toggleLeftMenu} />
         <Search />
         <Space />
         <DarkModeToggle darkMode={state.darkMode} handleToggle={handleDarkModeToggle} />

@@ -5,8 +5,7 @@ import { colors } from '../../utils/constants';
 
 import DarkModeReducer from '../../state/DarkModeReducer';
 import DarKModeContext from '../../state/DarkModeContext';
-import TopMenu from '../Menus/TopMenu/TopMenu.component';
-import LeftMenu from '../Menus/LeftMenu/LeftMenu.component';
+import MenusComponent from '../Menus/Menus.component';
 
 const Container = styled.main`
   background: ${colors.BG_SITE};
@@ -21,8 +20,7 @@ function Layout({ children }) {
   return (
     <Container className="layout">
       <DarKModeContext.Provider value={{ state, dispatch }}>
-        <TopMenu />
-        <LeftMenu />
+        <MenusComponent />
         {children}
       </DarKModeContext.Provider>
     </Container>
