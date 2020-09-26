@@ -11,14 +11,26 @@ const Container = styled.div`
   color: ${colors.FONT_SITE};
 `;
 
+const Background = styled.div`
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
 const LeftMenu = (props) => {
   const { authenticated } = useAuth();
 
   return (
-    <Container className={`LeftMenu ${props.show ? 'active' : ''}`}>
-      <Link to="/">Home</Link>
-      {authenticated && <Link to="/Favorites">Favorites</Link>}
-    </Container>
+    <>
+      {props.show && <Background onClick={props.handleClose} />}
+      <Container className={`LeftMenu ${props.show ? 'active' : ''}`}>
+        <Link to="/">Home</Link>
+        {authenticated && <Link to="/Favorites">Favorites</Link>}
+      </Container>
+    </>
   );
 };
 

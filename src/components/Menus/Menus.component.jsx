@@ -7,16 +7,16 @@ const MenusComponent = () => {
 
   const toggleLeftMenu = () => {
     showLeftMenu(!shouldShouldLeftMenu);
-    console.log({
-      shouldShouldLeftMenu,
-      message: "TOGGLE",
-    });
+  };
+
+  const handleClose = () => {
+    showLeftMenu(false);
   };
 
   return (
     <div>
       <TopMenu toggleLeftMenu={toggleLeftMenu} />
-      <LeftMenu show={shouldShouldLeftMenu} />
+      <LeftMenu show={shouldShouldLeftMenu} handleClose={handleClose} />
     </div>
   );
 };
