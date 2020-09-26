@@ -12,6 +12,7 @@ const AuthorizedMenu = (props) => {
     event.preventDefault();
     logout();
     history.push('/');
+    props.handleSelection();
   };
 
   return (
