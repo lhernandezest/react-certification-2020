@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import styled from 'styled-components';
-import './Layout.styles.css';
+import './Layout.sass';
 import { colors } from '../../utils/constants';
 
 import DarkModeReducer from '../../state/DarkModeReducer';
@@ -19,7 +19,7 @@ function Layout({ children }) {
   });
 
   return (
-    <Container className="container">
+    <Container className="layout">
       <DarKModeContext.Provider value={{ state, dispatch }}>
         <TopMenu />
         <LeftMenu />

@@ -11,6 +11,10 @@ const Profile = () => {
     showMenu(!shouldShowMenu);
   };
 
+  const handleMenuSelection = () => {
+    showMenu(false);
+  };
+
   return (
     <div className="TopMenuProfile">
       <img
@@ -20,7 +24,7 @@ const Profile = () => {
         alt="Profile Menu"
         aria-hidden="true"
       />
-      {shouldShowMenu && <ProfileMenu />}
+      {shouldShowMenu && <ProfileMenu handleSelection={handleMenuSelection} />}
     </div>
   );
 };
