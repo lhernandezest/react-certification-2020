@@ -15,14 +15,13 @@ function useAuth() {
 }
 
 function AuthProvider({ children }) {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
     const lastAuthState = storage.get(storageKeys.AUTHENTICATED);
-    const isAuthenticated = Boolean(lastAuthState);
 
     // setAuthenticated(isAuthenticated);
-    setAuthenticated(isAuthenticated);
+    setAuthUser(lastAuthState);
   }, []);
 
   const login = useCallback((request) => {
@@ -46,20 +45,20 @@ function AuthProvider({ children }) {
       };
     }
 
-    setAuthenticated(true);
-    storage.set(storageKeys.AUTHENTICATED, true);
+    setAuthUser(user);
+    storage.set(storageKeys.AUTHENTICATED, user);
     return {
       success: true,
     };
   }, []);
 
   const logout = useCallback(() => {
-    setAuthenticated(false);
-    storage.set(storageKeys.AUTHENTICATED, false);
+    setAuthUser(null);
+    storage.set(storageKeys.AUTHENTICATED, null);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ login, logout, authenticated }}>
+    <AuthContext.Provider value={{ login, logout, authUser }}>
       {children}
     </AuthContext.Provider>
   );

@@ -28,7 +28,6 @@ const UnauthorizedMenu = (props) => {
         handleLogin={authenticate}
         show={shouldShowLoginForm}
         handleClose={handleCloseLoginForm}
-        onHide={() => {}}
       />
     </>
   );

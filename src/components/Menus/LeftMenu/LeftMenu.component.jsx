@@ -21,14 +21,20 @@ const Background = styled.div`
 `;
 
 const LeftMenu = (props) => {
-  const { authenticated } = useAuth();
+  const { authUser } = useAuth();
 
   return (
     <>
       {props.show && <Background onClick={props.handleClose} />}
       <Container className={`LeftMenu ${props.show ? 'active' : ''}`}>
         <LeftMenuItem url="/" text="Home" handleClick={props.handleClose} />
-        {authenticated && <LeftMenuItem url="/Favorites" text="Favorites" handleClick={props.handleClose} />}
+        {authUser && (
+          <LeftMenuItem
+            url="/Favorites"
+            text="Favorites"
+            handleClick={props.handleClose}
+          />
+        )}
       </Container>
     </>
   );
