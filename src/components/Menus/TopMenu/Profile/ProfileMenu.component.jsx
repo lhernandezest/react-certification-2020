@@ -14,10 +14,10 @@ const ulWrapper = styled.ul`
 `;
 
 const ProfileMenu = (props) => {
-  const { authenticated } = useAuth();
+  const { authUser } = useAuth();
 
   const getOptions = () => {
-    if (authenticated) {
+    if (authUser) {
       return (
         <AuthorizedMenu ulWrapper={ulWrapper} handleSelection={props.handleSelection} />
       );
