@@ -6,7 +6,7 @@ import VideosContext from '../../state/VideosContext';
 const Favorites = () => {
   const { state } = useContext(VideosContext);
 
-  return(
+  return (
     <>
       <h1>Favorites</h1>
       <ul>
