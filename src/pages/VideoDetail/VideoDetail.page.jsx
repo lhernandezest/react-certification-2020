@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import youtubeAPI from '../../utils/youtube';
+import LoadingComponent from '../../components/Generic/Loading.component';
+import VideoDetailComponent from '../../components/VideoDetail/VideoDetail.component';
 
-const VideoDetail = () => {
+const VideoDetailPage = () => {
   const { id } = useParams();
+  const [video, setVideo] = useState(null);
 
-  return <div>Video detail page. Video ID = {id}</div>;
+  useEffect(() => {
+    const fetchedVideo = youtubeAPI.searchById(+id); // '+' converts to number
+    setVideo(fetchedVideo);
+  }, [id]);
+
+  const getRenderComponent = () => {
+    if (video) return <VideoDetailComponent video={video} />;
+
+    return <LoadingComponent />;
+  };
+
+  return getRenderComponent();
 };
 
-export default VideoDetail;
+export default VideoDetailPage;
