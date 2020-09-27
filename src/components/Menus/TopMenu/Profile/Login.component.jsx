@@ -33,7 +33,7 @@ const Login = (props) => {
       <Modal
         id="loginModal"
         show={props.show}
-        onHide={props.onHide}
+        onHide={props.handleClose}
         backdrop="static"
         keyboard={false}
       >

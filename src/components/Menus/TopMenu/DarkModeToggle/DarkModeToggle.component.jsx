@@ -4,8 +4,13 @@ import './DarkModeToggle.sass';
 const DarkModeToggleComponent = (props) => {
   return (
     <div className="DarkModeToggle">
-      <label className="DarkModeToggle-switch" aria-hidden="true">
+      <label
+        htmlFor="DarkModeToggle-input"
+        className="DarkModeToggle-switch"
+        aria-hidden="true"
+      >
         <input
+          id="DarkModeToggle-input"
           className={`DarkModeToggle-input ${props.darkMode ? 'checked' : ''}`}
           type="checkbox"
           onChange={props.handleToggle}
