@@ -5,6 +5,7 @@ import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
 import FavoritesPage from '../../pages/Favorites';
+import VideoDetailPage from '../../pages/VideoDetail';
 import Private from '../Private';
 import Layout from '../Layout';
 
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Private path="/favorites">
               <FavoritesPage />
+            </Private>
+            <Private path="/video/:id">
+              <VideoDetailPage />
             </Private>
             <Route path="*">
               <NotFound />
