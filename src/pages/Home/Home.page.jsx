@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './Home.styles.css';
+import './Home.sass';
 
 import { useAuth } from '../../providers/Auth';
 import VideosContext from '../../state/VideosContext';
