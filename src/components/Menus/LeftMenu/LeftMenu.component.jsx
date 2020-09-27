@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import './LeftMenu.sass';
 import { colors } from '../../../utils/constants';
 
 import { useAuth } from '../../../providers/Auth';
+import LeftMenuItem from './LeftMenuItem.component';
 
 const Container = styled.div`
   background: ${colors.BG_SITE};
@@ -26,9 +26,12 @@ const LeftMenu = (props) => {
   return (
     <>
       {props.show && <Background onClick={props.handleClose} />}
-      <Container className={`LeftMenu ${props.show ? 'active' : ''}`}>
-        <Link to="/">Home</Link>
-        {authenticated && <Link to="/Favorites">Favorites</Link>}
+      <Container
+        className={`LeftMenu ${props.show ? 'active' : ''}`}
+        onClick={props.handleClose}
+      >
+        <LeftMenuItem url="/" text="Home" />
+        {authenticated && <LeftMenuItem url="/Favorites" text="Favorites" />}
       </Container>
     </>
   );
