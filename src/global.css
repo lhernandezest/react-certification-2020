@@ -17,7 +17,6 @@ body {
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
-  overflow-y: hidden;
 }
 
 .separator::before {
@@ -38,8 +37,4 @@ p {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.PageContainer {
-  width: 100vw;
 }

@@ -22,7 +22,7 @@ const VideoDetailPage = () => {
   const getRenderComponent = () => {
     if (video) {
       return (
-        <div className="PageContainer VideoDetail">
+        <div className="VideoDetail">
           <VideoDetailComponent video={video} />
           <SuggestedVideos videos={state.fetchedVideos} />
         </div>
