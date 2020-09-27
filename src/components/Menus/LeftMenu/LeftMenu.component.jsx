@@ -26,12 +26,9 @@ const LeftMenu = (props) => {
   return (
     <>
       {props.show && <Background onClick={props.handleClose} />}
-      <Container
-        className={`LeftMenu ${props.show ? 'active' : ''}`}
-        onClick={props.handleClose}
-      >
-        <LeftMenuItem url="/" text="Home" />
-        {authenticated && <LeftMenuItem url="/Favorites" text="Favorites" />}
+      <Container className={`LeftMenu ${props.show ? 'active' : ''}`}>
+        <LeftMenuItem url="/" text="Home" handleClick={props.handleClose} />
+        {authenticated && <LeftMenuItem url="/Favorites" text="Favorites" handleClick={props.handleClose} />}
       </Container>
     </>
   );
