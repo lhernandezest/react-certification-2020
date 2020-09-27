@@ -1,20 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import './VideoDetail.sass';
 import { useParams } from 'react-router-dom';
-import youtubeAPI from '../../utils/youtube';
+import VideosContext from '../../state/VideosContext';
+
 import LoadingComponent from '../../components/Generic/Loading.component';
 import VideoDetailComponent from '../../components/VideoDetail/VideoDetail.component';
+import SuggestedVideos from '../../components/VideoDetail/SuggestedVideos.component';
+
+const findVideoById = (videos, id) => videos.find((video) => video.etag === id);
 
 const VideoDetailPage = () => {
   const { id } = useParams();
+  const { state } = useContext(VideosContext);
   const [video, setVideo] = useState(null);
 
   useEffect(() => {
-    const fetchedVideo = youtubeAPI.searchById(+id); // '+' converts to number
-    setVideo(fetchedVideo);
+    const selectedVideo = findVideoById(state.fetchedVideos, +id); // '+' converts to number
+    setVideo(selectedVideo);
   }, [id]);
 
   const getRenderComponent = () => {
-    if (video) return <VideoDetailComponent video={video} />;
+    if (video) {
+      return (
+        <div className="VideoDetail">
+          <VideoDetailComponent video={video} />
+          <SuggestedVideos videos={state.fetchedVideos} />
+        </div>
+      );
+    }
 
     return <LoadingComponent />;
   };

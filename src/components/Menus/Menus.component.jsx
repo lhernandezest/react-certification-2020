@@ -14,10 +14,10 @@ const MenusComponent = () => {
   };
 
   return (
-    <div>
+    <>
       <TopMenu toggleLeftMenu={toggleLeftMenu} />
       <LeftMenu show={shouldShouldLeftMenu} handleClose={handleLeftMenuClose} />
-    </div>
+    </>
   );
 };
 

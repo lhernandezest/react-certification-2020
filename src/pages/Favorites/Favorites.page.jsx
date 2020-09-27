@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Favorites.sass';
 
+import VideosContext from '../../state/VideosContext';
+
 const Favorites = () => {
-  return <div>Favorites page</div>;
+  const { state } = useContext(VideosContext);
+
+  return(
+    <>
+      <h1>Favorites</h1>
+      <ul>
+        {state.favorites.map((favorite) => (
+          <li key={favorite.etag}>{favorite.title}</li>
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export default Favorites;

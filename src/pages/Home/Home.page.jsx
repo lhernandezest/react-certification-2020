@@ -10,12 +10,17 @@ import VideosList from '../../components/VideosList/VideosList.component';
 function HomePage() {
   const { authUser } = useAuth();
   // eslint-disable-next-line no-unused-vars
-  const { state } = useContext(VideosContext);
+  const { state, dispatch } = useContext(VideosContext);
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     const fetchedVideos = youtubeAPI.searchBy(state.currentSearch);
     setVideos(fetchedVideos);
+
+    dispatch({
+      type: 'SET_FETCHED_VIDEOS',
+      payload: fetchedVideos,
+    });
   }, [state.currentSearch]);
 
   return (

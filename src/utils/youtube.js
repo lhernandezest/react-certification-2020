@@ -6,7 +6,6 @@ import { includesNoCaseSensitive } from './fns';
 const youtubeAPI = {
   searchBy: (query) =>
     mockVideos.filter((video) => includesNoCaseSensitive(video.title, query)),
-  searchById: (id) => mockVideos.find((video) => video.etag === id),
 };
 
 export default youtubeAPI;
