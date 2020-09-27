@@ -7,10 +7,12 @@ const SuggesterVideoDetail = ({ data }) => {
   };
 
   return (
-    <Link className="VideoDetail-suggested-item" to={`/video/${data.etag}`}>
-      <div className="thumbnail" style={thumbnailStyle}></div>
-      <div className="details">{data.title}</div>
-    </Link>
+    <div>
+      <Link className="VideoDetail-suggested-item" to={`/video/${data.etag}`}>
+        <div className="thumbnail" style={thumbnailStyle} />
+        <div className="details">{data.title}</div>
+      </Link>
+    </div>
   );
 };
 
