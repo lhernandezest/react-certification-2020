@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 
-import { AUTH_STORAGE_KEY } from '../../utils/constants';
+import { storageKeys } from '../../utils/constants';
 import { storage } from '../../utils/storage';
 import mockUsers from '../../utils/mockData/users';
 
@@ -18,7 +18,7 @@ function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    const lastAuthState = storage.get(AUTH_STORAGE_KEY);
+    const lastAuthState = storage.get(storageKeys.AUTHENTICATED);
     const isAuthenticated = Boolean(lastAuthState);
 
     // setAuthenticated(isAuthenticated);
@@ -47,7 +47,7 @@ function AuthProvider({ children }) {
     }
 
     setAuthenticated(true);
-    storage.set(AUTH_STORAGE_KEY, true);
+    storage.set(storageKeys.AUTHENTICATED, true);
     return {
       success: true,
     };
@@ -55,7 +55,7 @@ function AuthProvider({ children }) {
 
   const logout = useCallback(() => {
     setAuthenticated(false);
-    storage.set(AUTH_STORAGE_KEY, false);
+    storage.set(storageKeys.AUTHENTICATED, false);
   }, []);
 
   return (

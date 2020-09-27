@@ -1,4 +1,7 @@
-const AUTH_STORAGE_KEY = 'authenticated_key';
+const storageKeys = {
+  AUTHENTICATED: 'authenticated_key',
+  FAVORITE_VIDEOS: 'favorite_videos',
+};
 
 /* ACRONYMS
  BG: Background
@@ -14,4 +17,4 @@ const colors = {
   SHADOW_DARK_PROFILE_MENU: '#fff',
 };
 
-export { AUTH_STORAGE_KEY, colors };
+export { colors, storageKeys };

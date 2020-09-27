@@ -1,12 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useContext } from 'react';
 import './Home.styles.css';
 
+import VideosContext from '../../state/VideosContext';
+
 function HomePage() {
-  const sectionRef = useRef(null);
+  // eslint-disable-next-line no-unused-vars
+  const { state, dispatch } = useContext(VideosContext);
 
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
+    <section className="homepage">
+      <h1>Searching for {state.currentSearch}</h1>
     </section>
   );
 }

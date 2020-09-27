@@ -1,10 +1,12 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import styled from 'styled-components';
 import './Layout.sass';
 import { colors } from '../../utils/constants';
 
 import DarkModeReducer from '../../state/DarkModeReducer';
 import DarKModeContext from '../../state/DarkModeContext';
+import VideosContext from '../../state/VideosContext';
+import VideosReducer from '../../state/VideosReducer';
 import MenusComponent from '../Menus/Menus.component';
 
 const Container = styled.main`
@@ -13,15 +15,29 @@ const Container = styled.main`
 `;
 
 function Layout({ children }) {
-  const [state, dispatch] = useReducer(DarkModeReducer, {
+  const [darkModeState, darkModeDispatch] = useReducer(DarkModeReducer, {
     darkMode: false,
   });
 
+  const [videosState, videosDispatch] = useReducer(VideosReducer, {
+    currentSearch: 'Wizeline',
+    favorites: [],
+  });
+
+  useEffect(() => {
+    videosDispatch('LOAD_FROM_STORAGE');
+  }, []);
+
+  const darkModeContextValue = { state: darkModeState, dispatch: darkModeDispatch };
+  const videosContextValue = { state: videosState, dispatch: videosDispatch };
+
   return (
     <Container className="layout">
-      <DarKModeContext.Provider value={{ state, dispatch }}>
-        <MenusComponent />
-        {children}
+      <DarKModeContext.Provider value={darkModeContextValue}>
+        <VideosContext.Provider value={videosContextValue}>
+          <MenusComponent />
+          {children}
+        </VideosContext.Provider>
       </DarKModeContext.Provider>
     </Container>
   );
