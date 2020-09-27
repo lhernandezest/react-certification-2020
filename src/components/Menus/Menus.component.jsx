@@ -9,14 +9,14 @@ const MenusComponent = () => {
     showLeftMenu(!shouldShouldLeftMenu);
   };
 
-  const handleClose = () => {
+  const handleLeftMenuClose = () => {
     showLeftMenu(false);
   };
 
   return (
     <div>
       <TopMenu toggleLeftMenu={toggleLeftMenu} />
-      <LeftMenu show={shouldShouldLeftMenu} handleClose={handleClose} />
+      <LeftMenu show={shouldShouldLeftMenu} handleClose={handleLeftMenuClose} />
     </div>
   );
 };
