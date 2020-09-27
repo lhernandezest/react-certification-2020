@@ -9,6 +9,12 @@ const VideosReducer = (state, action) => {
         currentSearch: action.payload,
       };
     }
+    case 'SET_FETCHED_VIDEOS': {
+      return {
+        ...state,
+        fetchedVideos: action.payload,
+      };
+    }
     case 'LOAD_FAVORITES_FROM_STORAGE': {
       const favorites = storage.get(storageKeys.FAVORITE_VIDEOS);
       return {

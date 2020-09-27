@@ -21,6 +21,7 @@ function Layout({ children }) {
 
   const [videosState, videosDispatch] = useReducer(VideosReducer, {
     currentSearch: 'Wizeline',
+    fetchedVideos: [],
     favorites: [],
   });
 
