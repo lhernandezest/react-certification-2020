@@ -32,7 +32,7 @@ const VideosReducer = (state, action) => {
     }
     case 'REMOVE_FAVORITE': {
       const favorites = state.favorites.filter(
-        (favorite) => favorite.id !== action.payload
+        (favorite) => favorite.etag !== action.payload
       );
       storage.set(storageKeys.FAVORITE_VIDEOS, favorites);
       return {
