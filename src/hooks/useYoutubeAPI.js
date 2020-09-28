@@ -6,7 +6,7 @@ const useAPI = (request) => {
   useEffect(() => {
     // TODO actual api request
     setResult(request);
-  });
+  }, []);
 
   return result;
 };

@@ -26,7 +26,9 @@ function Layout({ children }) {
   });
 
   useEffect(() => {
-    videosDispatch('LOAD_FROM_STORAGE');
+    videosDispatch({
+      type: 'LOAD_FAVORITES_FROM_STORAGE',
+    });
   }, []);
 
   const darkModeContextValue = { state: darkModeState, dispatch: darkModeDispatch };
