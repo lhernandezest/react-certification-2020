@@ -3,116 +3,239 @@ const height = 300;
 
 const videos = [
   {
-    etag: 1,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/237/${width}/${height}`,
-    title: 'wizeline',
-    description: 'This is a video1',
+    id: {
+      etag: 1,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 2,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 2,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 3,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/239/${width}/${height}`,
-    title: 'luis',
-    description: 'This is a video1',
+    id: {
+      etag: 3,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 4,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/240/${width}/${height}`,
-    title: 'wizelineluis',
-    description: 'This is a video1',
+    id: {
+      etag: 4,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    },
   },
   {
-    etag: 5,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/240/${width}/${height}`,
-    title: 'Real Madrid',
-    description: 'This is a video1',
+    id: {
+      etag: 5,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 6,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 6,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 7,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 7,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 8,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 8,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 9,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 9,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 10,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 10,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 11,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 11,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 12,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 12,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
   {
-    etag: 13,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
-  },
-  {
-    etag: 14,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
-  },
-  {
-    etag: 15,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
-  },
-  {
-    etag: 16,
-    url: `https://www.youtube.com/embed/nmXMgqjQzls`,
-    thumbnail: `https://picsum.photos/id/238/${width}/${height}`,
-    title: 'wizeline2',
-    description: 'This is a video1',
+    id: {
+      etag: 13,
+      videoId: '3mnSDifDSxQ',
+    },
+    snippet: {
+      thumbnails: {
+        default: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+        medium: {
+          url: `https://picsum.photos/id/230/${width}/${height}`,
+        },
+      },
+      title: 'wizeline',
+      description: 'This is a video1',
+    },
   },
 ];
 

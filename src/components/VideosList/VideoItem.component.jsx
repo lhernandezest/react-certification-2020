@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 import DarKModeContext from '../../state/DarkModeContext';
 
-const VideoItem = ({ data }) => {
+const VideoItem = ({ id, data }) => {
   const { state } = useContext(DarKModeContext);
 
   const thumbnailStyle = {
-    backgroundImage: `url("${data.thumbnail}")`,
+    backgroundImage: `url("${data.thumbnails.medium.url}")`,
   };
 
   return (
     <Link
       className={`VideosList-item ${state.darkMode && 'darkMode'}`}
-      to={`/video/${data.etag}`}
+      to={`/video/${id}`}
     >
       <div className="VideosList-item-thumbnail" style={thumbnailStyle} />
       <div className="VideosList-item-content">

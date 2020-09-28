@@ -1,12 +1,12 @@
 import React from 'react';
 
-import SuggesterVideoDetail from './SuggesterVideoDetail.component';
+import SuggestedVideoDetail from './SuggestedVideoDetail.component';
 
 const SuggestedVideos = ({ videos }) => {
   return (
     <div className="VideoDetail-suggested">
       {videos.map((video) => (
-        <SuggesterVideoDetail data={video} />
+        <SuggestedVideoDetail key={video.etag} id={video.etag} data={video.snippet} />
       ))}
     </div>
   );
