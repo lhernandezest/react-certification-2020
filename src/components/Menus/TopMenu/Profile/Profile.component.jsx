@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+import './Profile.sass';
 
 import avatarIcon from '../../../../assets/avatar-icon.png';
-import './Profile.sass';
 import ProfileMenu from './ProfileMenu.component';
 import { useAuth } from '../../../../providers/Auth';
+
+const Background = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.1;
+`;
 
 const Profile = () => {
   const { authUser } = useAuth();
@@ -26,7 +37,12 @@ const Profile = () => {
         alt="Profile Menu"
         aria-hidden="true"
       />
-      {shouldShowMenu && <ProfileMenu handleSelection={handleMenuSelection} />}
+      {shouldShowMenu && (
+        <div>
+          <ProfileMenu handleSelection={handleMenuSelection} />
+          <Background onClick={toggleMenu} />
+        </div>
+      )}
     </div>
   );
 };

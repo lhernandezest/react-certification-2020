@@ -20,7 +20,6 @@ const Login = (props) => {
       username,
       password,
     });
-    console.log(response);
 
     if (response.success) {
       return props.handleClose();

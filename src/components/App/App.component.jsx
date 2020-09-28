@@ -1,8 +1,5 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-import DarkModeReducer from '../../state/DarkModeReducer';
-import DarKModeContext from '../../state/DarkModeContext';
 
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
@@ -13,10 +10,6 @@ import Private from '../Private';
 import Layout from '../Layout';
 
 function App() {
-  // const [darkModeState, darkModeDispatcher] = useReducer(DarkModeReducer, {
-  //   darkMode: false,
-  // })
-
   return (
     <BrowserRouter>
       <AuthProvider>
