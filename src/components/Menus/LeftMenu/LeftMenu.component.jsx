@@ -22,7 +22,9 @@ const LeftMenu = (props) => {
   return (
     <>
       {props.show && <Background onClick={props.handleClose} />}
-      <div className={`LeftMenu ${props.show && 'active'} ${state.darkMode && 'darkMode'}`}>
+      <div
+        className={`LeftMenu ${props.show && 'active'} ${state.darkMode && 'darkMode'}`}
+      >
         <LeftMenuItem url="/" text="Home" handleClick={props.handleClose} />
         {authUser && (
           <LeftMenuItem

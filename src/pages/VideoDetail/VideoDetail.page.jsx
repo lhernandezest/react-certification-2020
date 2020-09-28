@@ -17,7 +17,7 @@ const VideoDetailPage = () => {
   useEffect(() => {
     const selectedVideo = findVideoById(state.fetchedVideos, +id); // '+' converts to number
     setVideo(selectedVideo);
-  }, [id]);
+  }, [setVideo, state, id]);
 
   const getRenderComponent = () => {
     if (video) {

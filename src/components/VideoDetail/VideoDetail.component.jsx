@@ -11,7 +11,7 @@ const VideoDetailComponent = ({ video = {} }) => {
       !!state.favorites.find((favorite) => targetVideo.etag === favorite.etag);
 
     setIsFavorite(!!findFavorite(video));
-  }, [video]);
+  }, [state.favorites, video]);
 
   const handleFavoriteToggle = () => {
     if (isFavorite) {
