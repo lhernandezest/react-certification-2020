@@ -1,30 +1,57 @@
-import React from 'react';
-import styled from 'styled-components';
-import { colors } from '../../../../utils/constants';
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../../../providers/Auth';
+import DarKModeContext from '../../../../state/DarkModeContext';
 
-import UnauthorizedMenu from './UnauthorizedMenu.component';
-import AuthorizedMenu from './AuthorizedMenu.component';
-
-const ulWrapper = styled.ul`
-  background: ${colors.BG_SITE};
-  color: ${colors.FONT_SITE};
-  box-shadow: 2px 0px 10px 0px ${colors.SHADOW_PROFILE_MENU};
-`;
+import ProfileMenuItem from './ProfileMenuItem.component';
+import LoginComponent from './Login.component';
 
 const ProfileMenu = (props) => {
-  const { authUser } = useAuth();
+  const history = useHistory();
+  const { authUser, login, logout } = useAuth();
+  const { state } = useContext(DarKModeContext);
+  const [shouldShowLoginForm, showLoginForm] = useState(false);
+
+  const deAuthenticate = (event) => {
+    event.preventDefault();
+    logout();
+    history.push('/');
+    props.handleSelection();
+  };
+
+  const authenticate = (request) => {
+    return login(request);
+  };
+
+  const handleLoginClick = () => {
+    showLoginForm(true);
+  };
+
+  const handleCloseLoginForm = () => {
+    props.handleSelection();
+  };
 
   const getOptions = () => {
     if (authUser) {
       return (
-        <AuthorizedMenu ulWrapper={ulWrapper} handleSelection={props.handleSelection} />
+        <ul className={`TopMenuProfile-menu ${state.darkMode && 'darkMode'}`}>
+          <ProfileMenuItem text="Logout" handleClick={deAuthenticate} />
+        </ul>
       );
     }
 
     return (
-      <UnauthorizedMenu ulWrapper={ulWrapper} handleSelection={props.handleSelection} />
+      <>
+        <ul className="TopMenuProfile-menu">
+          <ProfileMenuItem text="Login" handleClick={handleLoginClick} />
+        </ul>
+        <LoginComponent
+          handleLogin={authenticate}
+          show={shouldShowLoginForm}
+          handleClose={handleCloseLoginForm}
+        />
+      </>
     );
   };
 

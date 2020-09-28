@@ -4,7 +4,12 @@
   left: -250px
   width: 250px
   height: 100vh
+  z-index: 100
+  background-color: var(--bg-site)
   transition: 0.4s
+  &.darkMode
+    background-color: var(--dark-bg-site)
+    color: var(--dark-font-site)
   &.active
     left: 0
     box-shadow: 8px 0px 21px -3px rgba(0,0,0,0.86)

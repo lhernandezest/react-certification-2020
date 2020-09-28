@@ -1,15 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import './LeftMenu.sass';
-import { colors } from '../../../utils/constants';
 
+import DarKModeContext from '../../../state/DarkModeContext';
 import { useAuth } from '../../../providers/Auth';
 import LeftMenuItem from './LeftMenuItem.component';
-
-const Container = styled.div`
-  background: ${colors.BG_SITE};
-  color: ${colors.FONT_SITE};
-`;
 
 const Background = styled.div`
   background: rgba(0, 0, 0, 0.1);
@@ -21,12 +16,13 @@ const Background = styled.div`
 `;
 
 const LeftMenu = (props) => {
+  const { state } = useContext(DarKModeContext);
   const { authUser } = useAuth();
 
   return (
     <>
       {props.show && <Background onClick={props.handleClose} />}
-      <Container className={`LeftMenu ${props.show ? 'active' : ''}`}>
+      <div className={`LeftMenu ${props.show && 'active'} ${state.darkMode && 'darkMode'}`}>
         <LeftMenuItem url="/" text="Home" handleClick={props.handleClose} />
         {authUser && (
           <LeftMenuItem
@@ -35,7 +31,7 @@ const LeftMenu = (props) => {
             handleClick={props.handleClose}
           />
         )}
-      </Container>
+      </div>
     </>
   );
 };
