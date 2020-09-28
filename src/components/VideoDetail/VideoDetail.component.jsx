@@ -38,10 +38,7 @@ const VideoDetailComponent = ({ video }) => {
 
   return (
     <div className="VideoDetail-video">
-      <YouTube
-        videoId={video.id.videoId}
-        opts={videoOptions}
-      />
+      <YouTube videoId={video.id.videoId} opts={videoOptions} />
       <div className="titleContainer">
         <h2>{video.snippet.title}</h2>
         <div
