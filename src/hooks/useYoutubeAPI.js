@@ -3,7 +3,9 @@ import { youtube } from '../utils/constants';
 
 const { apiUrl } = youtube;
 
-const useAPI = (query) => {
+window.gapi.client.setApiKey(process.env.REACT_APP_YOUTUBE_API_KEY);
+
+const useYoutubeAPI = (query) => {
   const [status, setStatus] = useState('idle');
   const [data, setData] = useState(null);
 
@@ -28,4 +30,4 @@ const useAPI = (query) => {
   return { status, data };
 };
 
-export default useAPI;
+export default useYoutubeAPI;
