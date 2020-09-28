@@ -16,7 +16,7 @@ const VideosReducer = (state, action) => {
       };
     }
     case 'LOAD_FAVORITES_FROM_STORAGE': {
-      const favorites = storage.get(storageKeys.FAVORITE_VIDEOS);
+      const favorites = storage.get(storageKeys.FAVORITE_VIDEOS) || [];
       return {
         ...state,
         favorites,

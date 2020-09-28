@@ -22,6 +22,17 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+      function start() {
+        // 2. Initialize the JavaScript client library.
+        gapi.client.init({
+          apiKey: 'AIzaSyBPjH02t1u_iP3EQpJH-V2fc1dWcLMLbq0',
+        });
+      }
+      // 1. Load the JavaScript client library.
+      gapi.load('client', start);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

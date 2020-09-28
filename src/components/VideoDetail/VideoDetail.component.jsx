@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
+import YouTube from 'react-youtube';
 
 import VideosContext from '../../state/VideosContext';
 
-const VideoDetailComponent = ({ video = {} }) => {
+const VideoDetailComponent = ({ video }) => {
   const { state, dispatch } = useContext(VideosContext);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -30,11 +31,19 @@ const VideoDetailComponent = ({ video = {} }) => {
     setIsFavorite(true);
   };
 
+  const videoOptions = {
+    height: '500px',
+    width: '100%',
+  };
+
   return (
     <div className="VideoDetail-video">
-      <iframe title="video" width="100%" height="500px" src={video.url} />
+      <YouTube
+        videoId={video.id.videoId}
+        opts={videoOptions}
+      />
       <div className="titleContainer">
-        <h2>{video.title}</h2>
+        <h2>{video.snippet.title}</h2>
         <div
           className="addFavoriteContainer"
           onClick={handleFavoriteToggle}
@@ -43,7 +52,7 @@ const VideoDetailComponent = ({ video = {} }) => {
           {isFavorite ? 'Remove from' : 'Add to'} Favorites
         </div>
       </div>
-      <p className="descriptionContainer">{video.description}</p>
+      <p className="descriptionContainer">{video.snippet.description}</p>
     </div>
   );
 };
