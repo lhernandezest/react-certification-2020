@@ -6,10 +6,10 @@ const VideoDetailComponent = ({ video = {} }) => {
   const { state, dispatch } = useContext(VideosContext);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const findFavorite = (targetVideo) =>
-    !!state.favorites.find((favorite) => targetVideo.etag === favorite.etag);
-
   useEffect(() => {
+    const findFavorite = (targetVideo) =>
+      !!state.favorites.find((favorite) => targetVideo.etag === favorite.etag);
+
     setIsFavorite(!!findFavorite(video));
   }, [video]);
 
