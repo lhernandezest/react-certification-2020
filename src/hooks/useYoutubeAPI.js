@@ -3,13 +3,13 @@ import { youtube } from '../utils/constants';
 
 const { apiUrl } = youtube;
 
-window.gapi.client.setApiKey(process.env.REACT_APP_YOUTUBE_API_KEY);
-
 const useYoutubeAPI = (query) => {
   const [status, setStatus] = useState('idle');
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    window.gapi.client.setApiKey(process.env.REACT_APP_YOUTUBE_API_KEY);
+
     const fetchData = async () => {
       setStatus('fetching');
       try {
