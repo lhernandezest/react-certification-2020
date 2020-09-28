@@ -1,3 +1,15 @@
+:root {
+  --bg-top-menu: #1C5476;
+  --bg-site: #fff;
+  --font-site: #000;
+  --box-shadow: #000;
+  --dark-bg-site: #292929;
+  --dark-font-site: #fff;
+  --dark-bg-top-menu: #556cd6;
+  --dark-font-top-menu: #fff;
+  --dark-box-shadow: #fff;
+}
+
 html {
   font-size: 1.125rem;
   line-height: 1.6;
@@ -17,6 +29,7 @@ body {
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
+  overflow-y: hidden;
 }
 
 .separator::before {
@@ -31,10 +44,15 @@ p {
   font-weight: 400;
   line-height: 1.43;
   letter-spacing: 0.01071em;
-  color: rgba(0, 0, 0, 0.54);
+  opacity: 0.7;
 }
 
 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
   text-decoration: none;
   color: inherit;
 }

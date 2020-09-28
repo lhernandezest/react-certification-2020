@@ -9,7 +9,6 @@ import VideosList from '../../components/VideosList/VideosList.component';
 
 function HomePage() {
   const { authUser } = useAuth();
-  // eslint-disable-next-line no-unused-vars
   const { state, dispatch } = useContext(VideosContext);
   const [videos, setVideos] = useState([]);
 
@@ -21,7 +20,7 @@ function HomePage() {
       type: 'SET_FETCHED_VIDEOS',
       payload: fetchedVideos,
     });
-  }, [state.currentSearch]);
+  }, [dispatch, state.currentSearch]);
 
   return (
     <section className="homepage">

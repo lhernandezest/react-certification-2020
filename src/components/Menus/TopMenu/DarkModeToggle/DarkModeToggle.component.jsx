@@ -11,7 +11,7 @@ const DarkModeToggleComponent = (props) => {
       >
         <input
           id="DarkModeToggle-input"
-          className={`DarkModeToggle-input ${props.darkMode ? 'checked' : ''}`}
+          className={`DarkModeToggle-input ${props.darkMode && 'checked'}`}
           type="checkbox"
           onChange={props.handleToggle}
         />
