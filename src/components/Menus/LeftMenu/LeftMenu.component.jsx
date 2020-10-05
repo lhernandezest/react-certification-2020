@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import './LeftMenu.sass';
 
 import DarKModeContext from '../../../state/DarkModeContext';
-import { useAuth } from '../../../providers/Auth';
+import { getAuthUser } from '../../../utils/fns';
 import LeftMenuItem from './LeftMenuItem.component';
 
 const Background = styled.div`
@@ -17,7 +17,7 @@ const Background = styled.div`
 
 const LeftMenu = (props) => {
   const { state } = useContext(DarKModeContext);
-  const { authUser } = useAuth();
+  const authUser = getAuthUser();
 
   return (
     <>
@@ -28,7 +28,7 @@ const LeftMenu = (props) => {
         <LeftMenuItem url="/" text="Home" handleClick={props.handleClose} />
         {authUser && (
           <LeftMenuItem
-            url="/Favorites"
+            url="/favorites"
             text="Favorites"
             handleClick={props.handleClose}
           />

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { getAuthUser } from '../../../../utils/fns';
 import { useAuth } from '../../../../providers/Auth';
 import DarKModeContext from '../../../../state/DarkModeContext';
 
@@ -9,7 +10,7 @@ import LoginComponent from './Login.component';
 
 const ProfileMenu = (props) => {
   const history = useHistory();
-  const { authUser, login, logout } = useAuth();
+  const { login, logout } = useAuth();
   const { state } = useContext(DarKModeContext);
   const [shouldShowLoginForm, showLoginForm] = useState(false);
 
@@ -33,7 +34,7 @@ const ProfileMenu = (props) => {
   };
 
   const getOptions = () => {
-    if (authUser) {
+    if (getAuthUser()) {
       return (
         <ul className={`TopMenuProfile-menu ${state.darkMode && 'darkMode'}`}>
           <ProfileMenuItem text="Logout" handleClick={deAuthenticate} />

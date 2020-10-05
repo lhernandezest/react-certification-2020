@@ -16,6 +16,9 @@ const useYoutubeAPI = (query) => {
         const response = await window.gapi.client.request({
           path: `${apiUrl}/${query}`,
         });
+
+        // const response = { result: { items: [] } };  // Used to mock the request
+
         setData(response.result);
         setStatus('done');
       } catch (error) {

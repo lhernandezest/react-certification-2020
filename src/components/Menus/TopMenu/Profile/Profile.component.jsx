@@ -4,7 +4,7 @@ import './Profile.sass';
 
 import avatarIcon from '../../../../assets/avatar-icon.png';
 import ProfileMenu from './ProfileMenu.component';
-import { useAuth } from '../../../../providers/Auth';
+import { getAuthUser } from '../../../../utils/fns';
 
 const Background = styled.div`
   position: fixed;
@@ -17,7 +17,7 @@ const Background = styled.div`
 `;
 
 const Profile = () => {
-  const { authUser } = useAuth();
+  const authUser = getAuthUser();
   const [shouldShowMenu, showMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -33,7 +33,7 @@ const Profile = () => {
       <img
         className="TopMenuProfile-icon"
         onClick={toggleMenu}
-        src={authUser ? authUser.avatarUrl : avatarIcon}
+        src={getAuthUser() ? authUser.avatarUrl : avatarIcon}
         alt="Profile Menu"
         aria-hidden="true"
       />
