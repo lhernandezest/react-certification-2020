@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React, { useContext, useCallback } from 'react';
 
 import { storageKeys } from '../../utils/constants';
 import { storage } from '../../utils/storage';
@@ -15,15 +15,6 @@ function useAuth() {
 }
 
 function AuthProvider({ children }) {
-  const [authUser, setAuthUser] = useState(null);
-
-  useEffect(() => {
-    const lastAuthState = storage.get(storageKeys.AUTHENTICATED);
-
-    // setAuthenticated(isAuthenticated);
-    setAuthUser(lastAuthState);
-  }, []);
-
   const login = useCallback((request) => {
     const user = mockUsers.find((mockUser) => mockUser.username === request.username);
 
@@ -44,8 +35,6 @@ function AuthProvider({ children }) {
         },
       };
     }
-
-    setAuthUser(user);
     storage.set(storageKeys.AUTHENTICATED, user);
     return {
       success: true,
@@ -53,12 +42,11 @@ function AuthProvider({ children }) {
   }, []);
 
   const logout = useCallback(() => {
-    setAuthUser(null);
     storage.set(storageKeys.AUTHENTICATED, null);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ login, logout, authUser }}>
+    <AuthContext.Provider value={{ login, logout }}>
       {children}
     </AuthContext.Provider>
   );

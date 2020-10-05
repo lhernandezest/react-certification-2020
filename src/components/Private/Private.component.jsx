@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-import { useAuth } from '../../providers/Auth';
+import { getAuthUser } from '../../utils/fns';
 
 function Private({ children, ...rest }) {
-  const { authUser } = useAuth();
-
-  return <Route {...rest} render={() => (authUser ? children : <Redirect to="/" />)} />;
+  return (
+    <Route {...rest} render={() => (getAuthUser() ? children : <Redirect to="/" />)} />
+  );
 }
 
 export default Private;
