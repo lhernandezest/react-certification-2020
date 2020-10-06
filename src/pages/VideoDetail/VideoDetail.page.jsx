@@ -20,16 +20,16 @@ const VideoDetailPage = () => {
   }, [setVideo, state, id]);
 
   const getRenderComponent = () => {
-    if (video) {
-      return (
-        <div className="VideoDetail">
-          <VideoDetailComponent video={video} />
-          <SuggestedVideos videos={state.fetchedVideos} />
-        </div>
-      );
+    if (!video) {
+      return <LoadingComponent />;
     }
 
-    return <LoadingComponent />;
+    return (
+      <div className="VideoDetail">
+        <VideoDetailComponent video={video} />
+        <SuggestedVideos videos={state.fetchedVideos} />
+      </div>
+    );
   };
 
   return getRenderComponent();
