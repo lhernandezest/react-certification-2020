@@ -12,13 +12,19 @@ const VideoItem = ({ id, data }) => {
 
   return (
     <Link
+      key={id}
+      data-testid="detail-link"
       className={`VideosList-item ${state.darkMode && 'darkMode'}`}
       to={`/video/${id}`}
     >
-      <div className="VideosList-item-thumbnail" style={thumbnailStyle} />
+      <div
+        data-testid="thumbnail"
+        className="VideosList-item-thumbnail"
+        style={thumbnailStyle}
+      />
       <div className="VideosList-item-content">
-        <h2>{data.title}</h2>
-        <p>{data.description}</p>
+        <h2 data-testid="title">{data.title}</h2>
+        <p data-testid="description">{data.description}</p>
       </div>
     </Link>
   );
