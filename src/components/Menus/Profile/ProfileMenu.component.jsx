@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { getAuthUser } from '../../../../utils/fns';
-import { useAuth } from '../../../../providers/Auth';
-import DarKModeContext from '../../../../state/DarkModeContext';
+import { getAuthUser } from '../../../utils/fns';
+import { useAuth } from '../../../providers/Auth';
+import DarKModeContext from '../../../state/DarkModeContext';
 
 import ProfileMenuItem from './ProfileMenuItem.component';
 import LoginComponent from './Login.component';

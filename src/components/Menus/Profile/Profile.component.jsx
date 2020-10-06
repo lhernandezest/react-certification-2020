@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import './Profile.sass';
 
-import avatarIcon from '../../../../assets/avatar-icon.png';
+import avatarIcon from '../../../assets/avatar-icon.png';
 import ProfileMenu from './ProfileMenu.component';
-import { getAuthUser } from '../../../../utils/fns';
+import { getAuthUser } from '../../../utils/fns';
 
 const Background = styled.div`
   position: fixed;
