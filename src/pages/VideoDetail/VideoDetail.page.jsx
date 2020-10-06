@@ -19,20 +19,16 @@ const VideoDetailPage = () => {
     setVideo(selectedVideo);
   }, [setVideo, state, id]);
 
-  const getRenderComponent = () => {
-    if (!video) {
-      return <LoadingComponent />;
-    }
+  if (!video) {
+    return <LoadingComponent />;
+  }
 
-    return (
-      <div className="VideoDetail">
-        <VideoDetailComponent video={video} />
-        <SuggestedVideos videos={state.fetchedVideos} />
-      </div>
-    );
-  };
-
-  return getRenderComponent();
+  return (
+    <div className="VideoDetail">
+      <VideoDetailComponent video={video} />
+      <SuggestedVideos videos={state.fetchedVideos} />
+    </div>
+  );
 };
 
 export default VideoDetailPage;
