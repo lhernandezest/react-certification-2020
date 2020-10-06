@@ -36,16 +36,19 @@ const ProfileMenu = (props) => {
   const getOptions = () => {
     if (getAuthUser()) {
       return (
-        <ul className={`TopMenuProfile-menu ${state.darkMode && 'darkMode'}`}>
-          <ProfileMenuItem text="Logout" handleClick={deAuthenticate} />
+        <ul
+          data-testid="menu-container"
+          className={`TopMenuProfile-menu ${state.darkMode && 'darkMode'}`}
+        >
+          <ProfileMenuItem data-testid="logout-item" text="Logout" handleClick={deAuthenticate} />
         </ul>
       );
     }
 
     return (
       <>
-        <ul className="TopMenuProfile-menu">
-          <ProfileMenuItem text="Login" handleClick={handleLoginClick} />
+        <ul data-testid="menu-container" className={`TopMenuProfile-menu ${state.darkMode && 'darkMode'}`}>
+          <ProfileMenuItem data-testid="login-item" text="Login" handleClick={handleLoginClick} />
         </ul>
         <LoginComponent
           handleLogin={authenticate}

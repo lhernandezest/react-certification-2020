@@ -10,6 +10,7 @@ const DarkModeToggleComponent = (props) => {
         aria-hidden="true"
       >
         <input
+          data-testid="toggle"
           id="DarkModeToggle-input"
           className={`DarkModeToggle-input ${props.darkMode && 'checked'}`}
           type="checkbox"

@@ -40,8 +40,9 @@ const VideoDetailComponent = ({ video }) => {
     <div className="VideoDetail-video">
       <YouTube videoId={video.id.videoId} opts={videoOptions} />
       <div className="titleContainer">
-        <h2>{video.snippet.title}</h2>
+        <h2 data-testid="title">{video.snippet.title}</h2>
         <div
+          data-testid="favorites-toggle"
           className="addFavoriteContainer"
           onClick={handleFavoriteToggle}
           aria-hidden="true"
@@ -49,7 +50,9 @@ const VideoDetailComponent = ({ video }) => {
           {isFavorite ? 'Remove from' : 'Add to'} Favorites
         </div>
       </div>
-      <p className="descriptionContainer">{video.snippet.description}</p>
+      <p data-testid="description" className="descriptionContainer">
+        {video.snippet.description}
+      </p>
     </div>
   );
 };

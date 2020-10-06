@@ -2,7 +2,7 @@ import React, { useContext, useCallback } from 'react';
 
 import { storageKeys } from '../../utils/constants';
 import { storage } from '../../utils/storage';
-import mockUsers from '../../utils/mockData/users';
+import mockUsers from '../../testUtils/mockData/users';
 
 const AuthContext = React.createContext(null);
 
@@ -46,9 +46,7 @@ function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ login, logout }}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ login, logout }}>{children}</AuthContext.Provider>
   );
 }
 

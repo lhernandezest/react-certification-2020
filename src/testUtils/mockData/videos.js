@@ -3,8 +3,8 @@ const height = 300;
 
 const videos = [
   {
+    etag: 1,
     id: {
-      etag: 1,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -21,8 +21,8 @@ const videos = [
     },
   },
   {
+    etag: 2,
     id: {
-      etag: 2,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -39,8 +39,8 @@ const videos = [
     },
   },
   {
+    etag: 3,
     id: {
-      etag: 3,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -57,8 +57,8 @@ const videos = [
     },
   },
   {
+    etag: 4,
     id: {
-      etag: 4,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -76,8 +76,8 @@ const videos = [
     },
   },
   {
+    etag: 5,
     id: {
-      etag: 5,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -94,8 +94,8 @@ const videos = [
     },
   },
   {
+    etag: 6,
     id: {
-      etag: 6,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -112,8 +112,8 @@ const videos = [
     },
   },
   {
+    etag: 7,
     id: {
-      etag: 7,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -130,8 +130,8 @@ const videos = [
     },
   },
   {
+    etag: 8,
     id: {
-      etag: 8,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -148,8 +148,8 @@ const videos = [
     },
   },
   {
+    etag: 9,
     id: {
-      etag: 9,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -166,8 +166,8 @@ const videos = [
     },
   },
   {
+    etag: 10,
     id: {
-      etag: 10,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -184,8 +184,8 @@ const videos = [
     },
   },
   {
+    etag: 11,
     id: {
-      etag: 11,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -202,8 +202,8 @@ const videos = [
     },
   },
   {
+    etag: 12,
     id: {
-      etag: 12,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
@@ -220,8 +220,8 @@ const videos = [
     },
   },
   {
+    etag: 13,
     id: {
-      etag: 13,
       videoId: '3mnSDifDSxQ',
     },
     snippet: {
