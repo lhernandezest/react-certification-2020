@@ -21,9 +21,9 @@ function App() {
             <Private path="/favorites">
               <FavoritesPage />
             </Private>
-            <Private path="/video/:id">
+            <Route path="/video/:id">
               <VideoDetailPage />
-            </Private>
+            </Route>
             <Route path="*">
               <NotFound />
             </Route>
