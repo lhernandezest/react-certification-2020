@@ -3,7 +3,7 @@ import { youtube } from '../utils/constants';
 
 const { apiUrl } = youtube;
 
-const useYoutubeAPI = (query) => {
+const useYoutubeAPI = (search) => {
   const [status, setStatus] = useState('idle');
   const [data, setData] = useState(null);
 
@@ -14,7 +14,7 @@ const useYoutubeAPI = (query) => {
       setStatus('fetching');
       try {
         const response = await window.gapi.client.request({
-          path: `${apiUrl}/${query}`,
+          path: `${apiUrl}/search?q=${search}&part=snippet&maxResults=20&type=video`,
         });
 
         // const response = { result: { items: [] } };  // Used to mock the request
@@ -28,7 +28,7 @@ const useYoutubeAPI = (query) => {
     };
 
     fetchData();
-  }, [query]);
+  }, [search]);
 
   return { status, data };
 };
