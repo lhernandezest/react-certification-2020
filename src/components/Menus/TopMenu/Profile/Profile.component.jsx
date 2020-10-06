@@ -18,14 +18,14 @@ const Background = styled.div`
 
 const Profile = () => {
   const authUser = getAuthUser();
-  const [shouldShowMenu, showMenu] = useState(false);
+  const [shouldShowMenu, setShouldShowMenu] = useState(false);
 
   const toggleMenu = () => {
-    showMenu(!shouldShowMenu);
+    setShouldShowMenu(!shouldShowMenu);
   };
 
   const handleMenuSelection = () => {
-    showMenu(false);
+    setShouldShowMenu(false);
   };
 
   return (
