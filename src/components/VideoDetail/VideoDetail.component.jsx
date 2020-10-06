@@ -50,7 +50,9 @@ const VideoDetailComponent = ({ video }) => {
           {isFavorite ? 'Remove from' : 'Add to'} Favorites
         </div>
       </div>
-      <p data-testid="description" className="descriptionContainer">{video.snippet.description}</p>
+      <p data-testid="description" className="descriptionContainer">
+        {video.snippet.description}
+      </p>
     </div>
   );
 };

@@ -8,9 +8,15 @@ const SuggesterVideoDetail = ({ id, data }) => {
 
   return (
     <div>
-      <Link data-testid="detail-link" className="VideoDetail-suggested-item" to={`/video/${id}`}>
+      <Link
+        data-testid="detail-link"
+        className="VideoDetail-suggested-item"
+        to={`/video/${id}`}
+      >
         <div data-testid="thumbnail" className="thumbnail" style={thumbnailStyle} />
-        <div data-testid="title" className="details">{data.title}</div>
+        <div data-testid="title" className="details">
+          {data.title}
+        </div>
       </Link>
     </div>
   );

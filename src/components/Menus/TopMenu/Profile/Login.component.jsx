@@ -40,13 +40,14 @@ const Login = (props) => {
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form id="loginForm" onSubmit={handleSubmit}>
+          <Form data-testid="login-form" id="loginForm" onSubmit={handleSubmit}>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
                 Username
               </Form.Label>
               <Col sm="10">
                 <Form.Control
+                  data-testid="username-input"
                   type="text"
                   placeholder="Username..."
                   value={username}
@@ -54,7 +55,7 @@ const Login = (props) => {
                   isInvalid={!!errors.username}
                   required
                 />
-                <Form.Control.Feedback type="invalid">
+                <Form.Control.Feedback data-testid="username-errors" type="invalid">
                   {errors.username}
                 </Form.Control.Feedback>
               </Col>
@@ -66,6 +67,7 @@ const Login = (props) => {
               </Form.Label>
               <Col sm="10">
                 <Form.Control
+                  data-testid="password-input"
                   type="password"
                   placeholder="Password..."
                   value={password}
@@ -73,7 +75,7 @@ const Login = (props) => {
                   isInvalid={!!errors.password}
                   required
                 />
-                <Form.Control.Feedback type="invalid">
+                <Form.Control.Feedback data-testid="password-errors" type="invalid">
                   {errors.password}
                 </Form.Control.Feedback>
               </Col>
@@ -81,10 +83,10 @@ const Login = (props) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.handleClose}>
+          <Button data-testid="close-btn" variant="secondary" onClick={props.handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" type="submit" form="loginForm">
+          <Button data-testid="send-btn" variant="primary" type="submit" form="loginForm">
             Send
           </Button>
         </Modal.Footer>
