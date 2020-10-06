@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { storageKeys } from '../../../../../utils/constants';
-import { storage } from '../../../../../utils/storage';
+import { storageKeys } from '../../../../utils/constants';
+import { storage } from '../../../../utils/storage';
 
-import AuthProvider from '../../../../../providers/Auth';
-import DarKModeContext from '../../../../../state/DarkModeContext';
+import AuthProvider from '../../../../providers/Auth';
+import DarKModeContext from '../../../../state/DarkModeContext';
 import ProfileMenu from '../ProfileMenu.component';
 
-import { darkModeContext, lightModeContext } from '../../../../../testUtils/mocks';
+import { darkModeContext, lightModeContext } from '../../../../testUtils/mocks';
 
 function renderProfileMenu(props, context) {
   render(

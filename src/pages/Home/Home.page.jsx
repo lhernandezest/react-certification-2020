@@ -6,7 +6,7 @@ import { useAuth } from '../../providers/Auth';
 import VideosContext from '../../state/VideosContext';
 
 import VideosList from '../../components/VideosList/VideosList.component';
-import useAPI from '../../hooks/useYoutubeAPI';
+import useYoutubeAPI from '../../hooks/useYoutubeAPI';
 import LoadingComponent from '../../components/Generic/Loading.component';
 
 const Error = styled.span`
@@ -16,9 +16,7 @@ const Error = styled.span`
 function HomePage() {
   const { authUser } = useAuth();
   const { state, dispatch } = useContext(VideosContext);
-  const { status, data } = useAPI(
-    `search?q=${state.currentSearch}&part=snippet&maxResults=20&type=video`
-  );
+  const { status, data } = useYoutubeAPI(state.currentSearch);
 
   useEffect(() => {
     if (!data) return;

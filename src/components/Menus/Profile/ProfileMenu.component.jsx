@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { getAuthUser } from '../../../../utils/fns';
-import { useAuth } from '../../../../providers/Auth';
-import DarKModeContext from '../../../../state/DarkModeContext';
+import { getAuthUser } from '../../../utils/fns';
+import { useAuth } from '../../../providers/Auth';
+import DarKModeContext from '../../../state/DarkModeContext';
 
 import ProfileMenuItem from './ProfileMenuItem.component';
 import LoginComponent from './Login.component';
@@ -40,15 +40,26 @@ const ProfileMenu = (props) => {
           data-testid="menu-container"
           className={`TopMenuProfile-menu ${state.darkMode && 'darkMode'}`}
         >
-          <ProfileMenuItem data-testid="logout-item" text="Logout" handleClick={deAuthenticate} />
+          <ProfileMenuItem
+            data-testid="logout-item"
+            text="Logout"
+            handleClick={deAuthenticate}
+          />
         </ul>
       );
     }
 
     return (
       <>
-        <ul data-testid="menu-container" className={`TopMenuProfile-menu ${state.darkMode && 'darkMode'}`}>
-          <ProfileMenuItem data-testid="login-item" text="Login" handleClick={handleLoginClick} />
+        <ul
+          data-testid="menu-container"
+          className={`TopMenuProfile-menu ${state.darkMode && 'darkMode'}`}
+        >
+          <ProfileMenuItem
+            data-testid="login-item"
+            text="Login"
+            handleClick={handleLoginClick}
+          />
         </ul>
         <LoginComponent
           handleLogin={authenticate}

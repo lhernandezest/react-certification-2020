@@ -3,7 +3,7 @@ import React from 'react';
 const VideosContext = React.createContext({
   currentSearch: '',
   fetchedVideos: [],
-  favoriteVideos: [],
+  favorites: [],
 });
 
 export default VideosContext;

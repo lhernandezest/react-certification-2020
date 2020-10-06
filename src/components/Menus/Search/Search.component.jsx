@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import './Search.sass';
-import SearchIcon from '../../../../assets/search-icon.svg';
+import SearchIcon from '../../../assets/search-icon.svg';
 
-import VideosContext from '../../../../state/VideosContext';
+import VideosContext from '../../../state/VideosContext';
 
 const Search = () => {
   const { state, dispatch } = useContext(VideosContext);

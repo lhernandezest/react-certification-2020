@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import './TopMenu.sass';
 
 import DarKModeContext from '../../../state/DarkModeContext';
-import LeftMenuToggle from './LeftMenuToggle/LeftMenuToggle.component';
-import Search from './Search/Search.component';
-import DarkModeToggle from './DarkModeToggle/DarkModeToggle.component';
-import Profile from './Profile/Profile.component';
+import LeftMenuToggle from '../LeftMenuToggle/LeftMenuToggle.component';
+import Search from '../Search/Search.component';
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle.component';
+import Profile from '../Profile/Profile.component';
 
 const Space = styled.div`
   width: auto;

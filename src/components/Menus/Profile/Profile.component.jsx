@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import './Profile.sass';
 
-import avatarIcon from '../../../../assets/avatar-icon.png';
+import avatarIcon from '../../../assets/avatar-icon.png';
 import ProfileMenu from './ProfileMenu.component';
-import { getAuthUser } from '../../../../utils/fns';
+import { getAuthUser } from '../../../utils/fns';
 
 const Background = styled.div`
   position: fixed;
@@ -18,14 +18,14 @@ const Background = styled.div`
 
 const Profile = () => {
   const authUser = getAuthUser();
-  const [shouldShowMenu, showMenu] = useState(false);
+  const [shouldShowMenu, setShouldShowMenu] = useState(false);
 
   const toggleMenu = () => {
-    showMenu(!shouldShowMenu);
+    setShouldShowMenu(!shouldShowMenu);
   };
 
   const handleMenuSelection = () => {
-    showMenu(false);
+    setShouldShowMenu(false);
   };
 
   return (
